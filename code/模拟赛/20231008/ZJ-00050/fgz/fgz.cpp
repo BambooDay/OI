@@ -3,15 +3,12 @@
 
 using namespace std;
 int n,m;
-int gcd(int x, int y){
-	if(!y) return x;
-	return gcd(y,x%y);
-}
+
 void solve(){
 	cin >> n >> m;
 	n *= 2;
 	m *= 2;
-	cout << n*m / gcd(n,m) << endl;	
+	cout << n*m / __gcd(n,m) << endl;	
 }
 signed main(){
 	freopen("fgz.in","r",stdin);
