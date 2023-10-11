@@ -13,7 +13,8 @@ void add(int u, int v, int id,int num,int g){
 } 
 int n,p,t;
 struct Node{
-	int u, id, d;
+	int u, id;
+	long long d;
 	friend bool operator <(Node a, Node b){
 		if(a.d != b.d) return a.d > b.d;
 		if(a.u != b.u) return a.u > b.u;
