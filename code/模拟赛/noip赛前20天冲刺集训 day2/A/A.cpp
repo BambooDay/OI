@@ -17,6 +17,8 @@ int build(int dep, int now){
 //int c[100];
 int main(){
 	//cout << sizeof c << endl;
+	freopen("A3_6.in","r",stdin);
+	freopen("A3_6.out","w",stdout);
 	cin >> a >> b;
 	if(b == 0){
 		if(a == 3 || a == 1){
