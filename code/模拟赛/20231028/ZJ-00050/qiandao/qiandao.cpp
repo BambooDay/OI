@@ -2,9 +2,9 @@
 const int N = 2e6+10;
 
 using namespace std;
-int n,ans;
-int a[N],l[N],r[N];
-int st[N],top;
+int n;
+int a[N];
+int ans = 0;
 namespace iobuff{
 	const int LEN=1000000;
 	char in[LEN+5], out[LEN+5];
@@ -48,25 +48,18 @@ int main(){
 	freopen("qiandao.out","w",stdout);
 	//cin >> n;
 	scan(n);
-	for(int i = 1; i <= n; i++){
-		scan(a[i]);
-		a[i]++;
-		while( top && a[st[top]] >= a[i] )top --;
-		l[i] = st[top];
-		st[++ top] = i;
-	} 
-	top = 0;
-	st[0] = n + 1;
-	for(int i = n;i >= 1;i --){
-		while( top && a[st[top]] > a[i] )top --;
-		r[i] = st[top];
-		st[++ top] = i;
-	}
-	for(int i = 1;i <= n;i ++){
-		int L = l[i],R = r[i];
-		int mn = min(i - L, R - i);
-		int ret = 1ll * mn * ( 2 * (i - L) - mn - 1 ) / 2;
-		ans += ret;
+	for(int i = 1; i <= n; i++) scan(a[i]);
+	for(int l = 1; l <= n; l++){
+		int mi = 1e9;
+		deque<int> q;
+		#define mid (((l+r)>>1)+1)
+		for(int r = l; r <= n; r++){
+			mi = min(mi,a[r]);
+			while(!q.empty() && q.front() < mid) q.pop_front();
+			while(!q.empty() && a[q.back()] >= a[r]) q.pop_back();
+			q.push_back(r);
+			if(a[q.front()] <= mi) ans++;
+		}
 	}
 	putint(ans - n,'\n'); 
 	flush();
