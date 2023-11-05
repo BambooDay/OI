@@ -9,7 +9,7 @@ int main(){
 	freopen("D10.in","w",stdout);
 	cout << n << " " << m << endl;
 	for(int i = 1; i <= n; i++){
-		int siz = rnd() % m+1;
+		int siz = 40;
 		cout << siz << " ";
 		memset(v,0,sizeof v);
 		for(int j = 1; j <= siz; j++){
