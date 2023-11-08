@@ -26,22 +26,6 @@ void SA(){
 		t *= 0.999;
 	}
 }
-//void SA() { 
-//	double Ti = 2004; 
-//	while (Ti > 1e-15) {
-//		long long x = (int)(rand()) % mid + 1, y = n - ((int)(rand()) % (mid + (n%2)));
-////		cout << x << " " << y << endl;
-//		long long dis = abs(suma - (a[x] << 1) + (a[y] << 1) - sumb);
-//		double D = dis - ans;
-//		if (exp(-D/Ti) > (double)(rand()/RAND_MAX)) {
-//			ans = min(ans,dis);
-//			suma = suma - a[x] + a[y];
-//			sumb = sumb - a[y] + a[x];
-//			swap(a[x], a[y]);
-//		}
-//		Ti *= 0.999;
-//	}
-//}
 void solve(){
 //	double st = clock();
 	cin >> n;
