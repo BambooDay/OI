@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+#define int long long
 int n,m;
 int f[1 << 20][20],cnt;
 vector<int> e[20];
